@@ -8,6 +8,12 @@
 :root {
     --color-dark-grey: #171717;
     --color-light-grey: #c5cdce;
+    --color-tomato: #e76f51;
+    --color-yellow: #e9c46a;
+    --color-teal: #2a9d8f;
+    --color-navy-blue: #264653;
+    --color-pink: #f94144;
+    --color-green: #36a35f;
 }
 
 body {
@@ -23,6 +29,7 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    position: relative;
 }
 
 .loader {
@@ -35,6 +42,28 @@ body {
     animation: loaderAnimate 2s ease-in infinite;
 }
 
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    color: white;
+    animation: rainbowAnimate 5s ease-in-out infinite;
+}
+.dot {
+    position: absolute;
+    animation: dotAnimate 2s ease infinite;
+    color: white;
+}
+.dot:nth-child(2) {
+    margin-left: 0.5rem;
+    animation-delay: 0.5s;
+}
+.dot:nth-child(3) {
+    margin-left: 1rem;
+    animation-delay: 1s;
+}
 .footer {
     color: white;
     letter-spacing: 2px;
@@ -47,5 +76,38 @@ body {
     }
     100% {
         transform: rotateZ(360deg);
+    }
+}
+
+/* color change */
+
+@keyframes rainbowAnimate {
+    0% {
+        color: var(--color-green);
+    }
+    20% {
+        color: var(--color-pink);
+    }
+    40% {
+        color: var(--color-navy-blue);
+    }
+    60% {
+        color: var(--color-yellow);
+    }
+    80% {
+        color: var(--color-teal);
+    }
+    100% {
+        color: var(--color-tomato);
+    }
+}
+
+@keyframes dotAnimate {
+    0%,
+    100% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(40%);
     }
 }
