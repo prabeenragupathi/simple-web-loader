@@ -32,9 +32,20 @@ body {
     border-top: 0.32rem dotted var(--color-light-grey);
     border-right: solid var(--color-dark-grey);
     border-left: solid var(--color-dark-grey);
+    animation: loaderAnimate 2s ease-in infinite;
 }
 
 .footer {
     color: white;
     letter-spacing: 2px;
+}
+
+/* -------------------animation--------- */
+@keyframes loaderAnimate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
