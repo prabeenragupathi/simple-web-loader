@@ -36,9 +36,9 @@ body {
 }
 
 .loader {
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     border-top: 0.32rem dotted var(--color-light-grey);
     border-right: solid var(--color-dark-grey);
     border-left: solid var(--color-dark-grey);
@@ -112,5 +112,12 @@ body {
     }
     50% {
         transform: translateY(40%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 220px;
+        height: 220px;
     }
 }
