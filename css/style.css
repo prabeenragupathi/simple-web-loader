@@ -19,6 +19,7 @@
 body {
     background-color: var(--color-dark-grey);
     min-height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -39,10 +40,9 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border-top: 0.32rem dotted var(--color-light-grey);
+    border-top: 0.32rem solid var(--color-light-grey);
     border-right: solid var(--color-dark-grey);
-    border-left: solid var(--color-dark-grey);
-    animation: loaderAnimate 2s ease-in infinite;
+    animation: loaderAnimate 1.6s ease-in-out infinite;
 }
 
 .text {
@@ -52,11 +52,11 @@ body {
     transform: translate(-50%, -50%);
     text-transform: capitalize;
     color: white;
-    animation: rainbowAnimate 5s ease-in-out infinite;
 }
 .dot {
     position: absolute;
-    animation: dotAnimate 2s ease infinite;
+    animation: dotAnimate 2s ease infinite,
+        rainbowAnimate 5s ease-in-out infinite;
     color: white;
 }
 .dot:nth-child(2) {
@@ -77,8 +77,15 @@ body {
     0% {
         transform: rotateZ(0deg);
     }
+    25% {
+        border-top-color: var(--color-green);
+    }
+    50% {
+        border-top-color: var(--color-pink);
+    }
     100% {
         transform: rotateZ(360deg);
+        border-top-color: var(--color-yellow);
     }
 }
 
@@ -117,7 +124,11 @@ body {
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
+    }
+    .loader {
+        width: 200px;
+        height: 200px;
     }
 }
